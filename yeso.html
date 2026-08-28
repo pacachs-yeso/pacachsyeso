@@ -1,0 +1,2238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#064e3b">
+  <meta name="description" content="Pacac High School YES-O, Youth for Environment in Schools Organization, School Year 2026-2027.">
+  <title>Pacac High School YES-O | S.Y. 2026-2027</title>
+
+  <style>
+    /* =========================================================
+       PACAC HIGH SCHOOL YES-O
+       SCHOOL YEAR 2026-2027
+       Single-file institutional website
+       ========================================================= */
+
+    :root {
+      --forest: #064e3b;
+      --forest-dark: #022c22;
+      --emerald: #059669;
+      --emerald-2: #10b981;
+      --mint: #d1fae5;
+      --mint-soft: #ecfdf5;
+      --white: #ffffff;
+      --charcoal: #17211d;
+      --muted: #64756d;
+      --border: rgba(255, 255, 255, 0.18);
+      --light-border: rgba(6, 78, 59, 0.10);
+      --shadow: 0 18px 50px rgba(2, 44, 34, 0.13);
+      --radius-lg: 24px;
+      --radius-md: 18px;
+      --radius-sm: 13px;
+      --container: 1160px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 92px;
+    }
+
+    body {
+      font-family: Poppins, Gotham, Inter, Arial, sans-serif;
+      color: var(--charcoal);
+      background: #f4faf7;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    body.menu-open {
+      overflow: hidden;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      max-width: 100%;
+    }
+
+    button,
+    a {
+      font: inherit;
+    }
+
+    button {
+      border: 0;
+      cursor: pointer;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(calc(100% - 28px), var(--container));
+      margin-inline: auto;
+    }
+
+    .section {
+      position: relative;
+      padding: 72px 0;
+      overflow: hidden;
+    }
+
+    .section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      margin-bottom: 10px;
+      padding: 6px 11px;
+      border: 1px solid rgba(5, 150, 105, 0.18);
+      border-radius: 999px;
+      background: rgba(236, 253, 245, 0.72);
+      color: var(--emerald);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .section-title {
+      max-width: 720px;
+      font-size: clamp(1.65rem, 5vw, 2.65rem);
+      line-height: 1.15;
+      font-weight: 650;
+      letter-spacing: -0.035em;
+    }
+
+    .section-description {
+      max-width: 700px;
+      margin-top: 13px;
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .section-heading {
+      margin-bottom: 30px;
+    }
+
+    /* =========================================================
+       NAVIGATION
+       ========================================================= */
+
+    .site-header {
+      position: fixed;
+      z-index: 1000;
+      top: 10px;
+      left: 0;
+      width: 100%;
+      pointer-events: none;
+    }
+
+    .nav-shell {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 66px;
+      padding: 8px 9px 8px 12px;
+      border: 1px solid rgba(255, 255, 255, 0.32);
+      border-radius: 21px;
+      background: rgba(4, 54, 40, 0.78);
+      backdrop-filter: blur(22px) saturate(150%);
+      -webkit-backdrop-filter: blur(22px) saturate(150%);
+      box-shadow: 0 12px 38px rgba(2, 44, 34, 0.22);
+      pointer-events: auto;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      min-width: 0;
+      gap: 9px;
+      color: white;
+    }
+
+    .brand-logo {
+      flex: 0 0 43px;
+      width: 43px;
+      height: 43px;
+      object-fit: contain;
+      border-radius: 12px;
+    }
+
+    .brand-text {
+      min-width: 0;
+      line-height: 1.15;
+    }
+
+    .brand-title {
+      display: block;
+      max-width: 225px;
+      overflow: hidden;
+      color: white;
+      font-size: 0.72rem;
+      font-weight: 650;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .brand-subtitle {
+      display: block;
+      margin-top: 3px;
+      color: rgba(255,255,255,0.66);
+      font-size: 0.62rem;
+      white-space: nowrap;
+    }
+
+    .nav-toggle {
+      display: grid;
+      place-items: center;
+      width: 43px;
+      height: 43px;
+      flex: 0 0 43px;
+      border: 1px solid rgba(255,255,255,0.16);
+      border-radius: 13px;
+      background: rgba(255,255,255,0.10);
+      color: white;
+    }
+
+    .nav-toggle span,
+    .nav-toggle span::before,
+    .nav-toggle span::after {
+      display: block;
+      width: 18px;
+      height: 2px;
+      border-radius: 999px;
+      background: currentColor;
+      transition: transform .22s ease;
+    }
+
+    .nav-toggle span {
+      position: relative;
+    }
+
+    .nav-toggle span::before,
+    .nav-toggle span::after {
+      position: absolute;
+      content: "";
+    }
+
+    .nav-toggle span::before {
+      top: -6px;
+    }
+
+    .nav-toggle span::after {
+      top: 6px;
+    }
+
+    .nav-toggle.active span {
+      background: transparent;
+    }
+
+    .nav-toggle.active span::before {
+      transform: translateY(6px) rotate(45deg);
+    }
+
+    .nav-toggle.active span::after {
+      transform: translateY(-6px) rotate(-45deg);
+    }
+
+    .nav-menu {
+      position: fixed;
+      top: 84px;
+      left: 14px;
+      right: 14px;
+      padding: 9px;
+      border: 1px solid rgba(255,255,255,0.25);
+      border-radius: 20px;
+      background: rgba(3, 49, 37, 0.94);
+      backdrop-filter: blur(22px);
+      -webkit-backdrop-filter: blur(22px);
+      box-shadow: var(--shadow);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-8px) scale(.98);
+      transition: .22s ease;
+    }
+
+    .nav-menu.open {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0) scale(1);
+    }
+
+    .nav-link {
+      display: block;
+      padding: 12px 13px;
+      border-radius: 12px;
+      color: rgba(255,255,255,0.75);
+      font-size: 0.82rem;
+      transition: .2s ease;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+      background: rgba(16,185,129,0.17);
+      color: white;
+    }
+
+    /* =========================================================
+       HOME
+       ========================================================= */
+
+    .hero {
+      min-height: 100svh;
+      display: flex;
+      align-items: center;
+      padding-top: 108px;
+      padding-bottom: 54px;
+      color: white;
+      background:
+        radial-gradient(circle at 90% 15%, rgba(16,185,129,0.26), transparent 32%),
+        radial-gradient(circle at 0% 90%, rgba(52,211,153,0.13), transparent 30%),
+        linear-gradient(145deg, #022c22 0%, #064e3b 50%, #047857 100%);
+    }
+
+    .hero-content {
+      display: grid;
+      gap: 28px;
+    }
+
+    .hero-copy {
+      max-width: 680px;
+    }
+
+    .hero-kicker {
+      display: inline-flex;
+      margin-bottom: 15px;
+      padding: 6px 11px;
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 999px;
+      background: rgba(255,255,255,0.08);
+      color: rgba(255,255,255,0.82);
+      font-size: 0.72rem;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+
+    .hero-title {
+      max-width: 620px;
+      font-size: clamp(2.15rem, 10vw, 4.4rem);
+      line-height: 1.02;
+      font-weight: 650;
+      letter-spacing: -0.055em;
+    }
+
+    .hero-description {
+      max-width: 590px;
+      margin-top: 15px;
+      color: rgba(255,255,255,0.76);
+      font-size: 0.95rem;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 19px;
+    }
+
+    .hero-meta span {
+      padding: 7px 10px;
+      border: 1px solid rgba(255,255,255,0.14);
+      border-radius: 999px;
+      background: rgba(255,255,255,0.07);
+      color: rgba(255,255,255,0.85);
+      font-size: 0.72rem;
+    }
+
+    .hero-image-wrap {
+      width: 100%;
+      max-width: 760px;
+      padding: 6px;
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 23px;
+      background: rgba(255,255,255,0.08);
+      box-shadow: 0 24px 70px rgba(0,0,0,0.18);
+    }
+
+    .hero-image {
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      border-radius: 18px;
+    }
+
+    .hero-image img {
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* =========================================================
+       ABOUT
+       ========================================================= */
+
+    .about {
+      background:
+        radial-gradient(circle at 15% 15%, rgba(16,185,129,0.14), transparent 28%),
+        linear-gradient(135deg, #ecfdf5 0%, #ffffff 50%, #dff8eb 100%);
+    }
+
+    .about-grid {
+      display: grid;
+      gap: 28px;
+    }
+
+    .about-photo {
+      padding: 6px;
+      border: 1px solid rgba(5,150,105,0.14);
+      border-radius: var(--radius-lg);
+      background: rgba(255,255,255,0.56);
+      box-shadow: var(--shadow);
+    }
+
+    .about-photo-inner {
+      aspect-ratio: 4 / 3;
+      overflow: hidden;
+      border-radius: 18px;
+    }
+
+    .about-photo img {
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .about-copy {
+      padding: 4px 0;
+    }
+
+    .about-copy h3 {
+      margin-bottom: 11px;
+      font-size: 1.45rem;
+      font-weight: 650;
+    }
+
+    .about-copy p {
+      color: var(--muted);
+      font-size: 0.91rem;
+    }
+
+    .about-points {
+      display: grid;
+      gap: 9px;
+      margin-top: 19px;
+    }
+
+    .about-point {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      padding: 12px;
+      border: 1px solid var(--light-border);
+      border-radius: 14px;
+      background: rgba(255,255,255,0.62);
+    }
+
+    .point-icon {
+      display: grid;
+      place-items: center;
+      width: 30px;
+      height: 30px;
+      flex: 0 0 30px;
+      border-radius: 9px;
+      background: linear-gradient(135deg, var(--forest), var(--emerald));
+      color: white;
+      font-size: .78rem;
+    }
+
+    .about-point strong {
+      display: block;
+      font-size: .81rem;
+      font-weight: 650;
+    }
+
+    .about-point span {
+      display: block;
+      margin-top: 1px;
+      color: var(--muted);
+      font-size: .76rem;
+    }
+
+    /* =========================================================
+       LEADERSHIP
+       ========================================================= */
+
+    .leadership {
+      color: white;
+      background:
+        radial-gradient(circle at 85% 20%, rgba(52,211,153,0.15), transparent 30%),
+        linear-gradient(145deg, #032c22, #064e3b 54%, #065f46);
+    }
+
+    .leadership .section-label {
+      border-color: rgba(255,255,255,0.15);
+      background: rgba(255,255,255,0.08);
+      color: #a7f3d0;
+    }
+
+    .leadership .section-description {
+      color: rgba(255,255,255,0.67);
+    }
+
+    .leadership-block {
+      margin-top: 28px;
+    }
+
+    .leadership-block-title {
+      margin-bottom: 13px;
+      color: rgba(255,255,255,0.86);
+      font-size: .78rem;
+      font-weight: 600;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+
+    .featured-leaders {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .leader-card {
+      min-width: 0;
+      padding: 10px;
+      border: 1px solid rgba(255,255,255,0.13);
+      border-radius: var(--radius-md);
+      background: rgba(255,255,255,0.075);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+    }
+
+    .leader-photo {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      overflow: hidden;
+      border-radius: 14px;
+      background: linear-gradient(135deg, #d1fae5, #6ee7b7);
+    }
+
+    .leader-photo img {
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .leader-name {
+      margin-top: 10px;
+      font-size: .79rem;
+      font-weight: 650;
+      color: white;
+    }
+
+    .leader-position {
+      margin-top: 2px;
+      color: rgba(255,255,255,0.58);
+      font-size: .7rem;
+    }
+
+    .officer-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .officer-card {
+      min-width: 0;
+      padding: 8px;
+      border: 1px solid rgba(255,255,255,0.11);
+      border-radius: 16px;
+      background: rgba(255,255,255,0.055);
+      transition: transform .22s ease, background .22s ease;
+    }
+
+    .officer-card:hover {
+      transform: translateY(-3px);
+      background: rgba(255,255,255,0.09);
+    }
+
+    .officer-photo {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      overflow: hidden;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #a7f3d0, #10b981);
+    }
+
+    .officer-photo img {
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .officer-name {
+      margin-top: 8px;
+      color: white;
+      font-size: .73rem;
+      font-weight: 650;
+      line-height: 1.3;
+    }
+
+    .officer-position {
+      margin-top: 2px;
+      color: rgba(255,255,255,0.53);
+      font-size: .65rem;
+      line-height: 1.35;
+    }
+
+    /* =========================================================
+       GALLERY
+       ========================================================= */
+
+    .gallery {
+      background:
+        radial-gradient(circle at 90% 10%, rgba(5,150,105,0.13), transparent 30%),
+        linear-gradient(135deg, #ffffff, #ecfdf5 50%, #dff8eb);
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .gallery-card {
+      padding: 7px;
+      border: 1px solid rgba(6,78,59,0.09);
+      border-radius: 16px;
+      background: rgba(255,255,255,0.68);
+      box-shadow: 0 10px 30px rgba(6,78,59,0.07);
+      cursor: pointer;
+      transition: transform .22s ease, box-shadow .22s ease;
+    }
+
+    .gallery-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 16px 38px rgba(6,78,59,0.12);
+    }
+
+    .gallery-image {
+      aspect-ratio: 4 / 3;
+      overflow: hidden;
+      border-radius: 11px;
+      background: linear-gradient(135deg, #d1fae5, #a7f3d0);
+    }
+
+    .gallery-image img {
+      height: 100%;
+      object-fit: cover;
+      transition: transform .3s ease;
+    }
+
+    .gallery-card:hover img {
+      transform: scale(1.035);
+    }
+
+    .gallery-title {
+      padding: 9px 3px 3px;
+      color: var(--forest);
+      font-size: .75rem;
+      font-weight: 650;
+    }
+
+    /* =========================================================
+       ECOPEDIA
+       ========================================================= */
+
+    .ecopedia {
+      color: white;
+      background:
+        radial-gradient(circle at 10% 10%, rgba(52,211,153,0.15), transparent 28%),
+        radial-gradient(circle at 95% 90%, rgba(16,185,129,0.12), transparent 28%),
+        linear-gradient(145deg, #022c22 0%, #064e3b 52%, #065f46 100%);
+    }
+
+    .ecopedia .section-label {
+      color: #a7f3d0;
+      border-color: rgba(255,255,255,0.14);
+      background: rgba(255,255,255,0.07);
+    }
+
+    .ecopedia .section-description {
+      color: rgba(255,255,255,0.67);
+    }
+
+    .month-selector {
+      display: flex;
+      gap: 7px;
+      padding-bottom: 5px;
+      margin: 26px 0 20px;
+      overflow-x: auto;
+      scrollbar-width: thin;
+    }
+
+    .month-btn {
+      flex: 0 0 auto;
+      padding: 9px 12px;
+      border: 1px solid rgba(255,255,255,0.13);
+      border-radius: 12px;
+      background: rgba(255,255,255,0.065);
+      color: rgba(255,255,255,0.68);
+      font-size: .73rem;
+      font-weight: 600;
+      transition: .2s ease;
+    }
+
+    .month-btn.active,
+    .month-btn:hover {
+      background: linear-gradient(135deg, var(--emerald-2), #34d399);
+      color: #022c22;
+      border-color: transparent;
+    }
+
+    .month-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 14px;
+      margin-bottom: 15px;
+    }
+
+    .month-name {
+      font-size: 1.15rem;
+      font-weight: 650;
+    }
+
+    .month-theme {
+      color: #a7f3d0;
+      font-size: .72rem;
+      text-align: right;
+    }
+
+    .ecopedia-grid {
+      display: grid;
+      gap: 11px;
+    }
+
+    .eco-card {
+      padding: 8px;
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 17px;
+      background: rgba(255,255,255,0.065);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      animation: cardIn .28s ease both;
+    }
+
+    .eco-image {
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #a7f3d0, #10b981);
+    }
+
+    .eco-image img {
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .eco-content {
+      padding: 10px 3px 4px;
+    }
+
+    .eco-content h3 {
+      color: white;
+      font-size: .86rem;
+      font-weight: 650;
+    }
+
+    .eco-content p {
+      margin-top: 4px;
+      color: rgba(255,255,255,0.62);
+      font-size: .73rem;
+      line-height: 1.55;
+    }
+
+    @keyframes cardIn {
+      from {
+        opacity: 0;
+        transform: translateY(7px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* =========================================================
+       SPONSORS
+       ========================================================= */
+
+    .sponsors {
+      background:
+        radial-gradient(circle at 15% 20%, rgba(16,185,129,0.10), transparent 30%),
+        linear-gradient(135deg, #f0fdf4, #ffffff 55%, #dcfce7);
+    }
+
+    .sponsor-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 9px;
+    }
+
+    .sponsor-card {
+      min-height: 68px;
+      display: grid;
+      place-items: center;
+      padding: 12px;
+      border: 1px solid rgba(6,78,59,0.09);
+      border-radius: 15px;
+      background: linear-gradient(145deg, rgba(255,255,255,.86), rgba(209,250,229,.50));
+      color: var(--forest);
+      text-align: center;
+      font-size: .77rem;
+      font-weight: 650;
+      transition: .2s ease;
+    }
+
+    .sponsor-card:hover {
+      transform: translateY(-2px);
+      border-color: rgba(5,150,105,.24);
+      box-shadow: 0 12px 30px rgba(6,78,59,.09);
+    }
+
+    /* =========================================================
+       BUDGET
+       ========================================================= */
+
+    .budget {
+      color: white;
+      background:
+        radial-gradient(circle at 90% 10%, rgba(52,211,153,0.15), transparent 28%),
+        linear-gradient(145deg, #022c22, #064e3b 56%, #065f46);
+    }
+
+    .budget .section-label {
+      color: #a7f3d0;
+      border-color: rgba(255,255,255,0.14);
+      background: rgba(255,255,255,0.07);
+    }
+
+    .budget .section-description {
+      color: rgba(255,255,255,0.65);
+    }
+
+    .financial-summary {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 9px;
+      margin: 26px 0;
+    }
+
+    .finance-card {
+      padding: 16px;
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 17px;
+      background: rgba(255,255,255,0.065);
+      backdrop-filter: blur(13px);
+      -webkit-backdrop-filter: blur(13px);
+    }
+
+    .finance-label {
+      color: rgba(255,255,255,0.58);
+      font-size: .7rem;
+    }
+
+    .finance-value {
+      margin-top: 4px;
+      color: white;
+      font-size: 1.35rem;
+      line-height: 1.2;
+      font-weight: 650;
+    }
+
+    .budget-table-wrap {
+      overflow-x: auto;
+      border: 1px solid rgba(255,255,255,0.11);
+      border-radius: 17px;
+      background: rgba(255,255,255,0.045);
+    }
+
+    .budget-table {
+      width: 100%;
+      min-width: 650px;
+      border-collapse: collapse;
+    }
+
+    .budget-table th,
+    .budget-table td {
+      padding: 12px 13px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      text-align: left;
+      font-size: .72rem;
+    }
+
+    .budget-table th {
+      color: #a7f3d0;
+      font-weight: 600;
+      background: rgba(0,0,0,0.10);
+    }
+
+    .budget-table td {
+      color: rgba(255,255,255,0.76);
+    }
+
+    .budget-table td:nth-child(n+2) {
+      text-align: right;
+    }
+
+    .budget-table tr:last-child td {
+      border-bottom: 0;
+    }
+
+    /* =========================================================
+       FOOTER
+       ========================================================= */
+
+    footer {
+      padding: 42px 0 30px;
+      color: rgba(255,255,255,0.72);
+      background:
+        radial-gradient(circle at 80% 20%, rgba(16,185,129,0.12), transparent 30%),
+        #021f18;
+    }
+
+    .footer-inner {
+      display: grid;
+      gap: 20px;
+    }
+
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+    }
+
+    .footer-logo {
+      width: 50px;
+      height: 50px;
+      object-fit: contain;
+      border-radius: 13px;
+    }
+
+    .footer-title {
+      color: white;
+      font-size: .84rem;
+      font-weight: 650;
+    }
+
+    .footer-subtitle {
+      margin-top: 2px;
+      color: rgba(255,255,255,0.52);
+      font-size: .68rem;
+    }
+
+    .footer-statement {
+      max-width: 550px;
+      color: rgba(255,255,255,0.57);
+      font-size: .76rem;
+    }
+
+    .footer-bottom {
+      padding-top: 18px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      color: rgba(255,255,255,0.4);
+      font-size: .65rem;
+    }
+
+    /* =========================================================
+       LIGHTBOX
+       ========================================================= */
+
+    .lightbox {
+      position: fixed;
+      z-index: 2000;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      padding: 20px;
+      background: rgba(1, 20, 15, 0.88);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      opacity: 0;
+      visibility: hidden;
+      transition: .22s ease;
+    }
+
+    .lightbox.open {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .lightbox-content {
+      width: min(100%, 850px);
+      position: relative;
+      padding: 7px;
+      border: 1px solid rgba(255,255,255,0.17);
+      border-radius: 19px;
+      background: rgba(255,255,255,0.08);
+      transform: scale(.96);
+      transition: .22s ease;
+    }
+
+    .lightbox.open .lightbox-content {
+      transform: scale(1);
+    }
+
+    .lightbox-image {
+      max-height: 72svh;
+      overflow: hidden;
+      border-radius: 13px;
+    }
+
+    .lightbox-image img {
+      width: 100%;
+      max-height: 72svh;
+      object-fit: contain;
+    }
+
+    .lightbox-caption {
+      padding: 10px 5px 3px;
+      color: white;
+      font-size: .8rem;
+      font-weight: 600;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: -11px;
+      right: -7px;
+      z-index: 2;
+      width: 36px;
+      height: 36px;
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 50%;
+      background: #064e3b;
+      color: white;
+      font-size: 1rem;
+    }
+
+    /* =========================================================
+       SCROLL REVEAL
+       ========================================================= */
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity .55s ease, transform .55s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* =========================================================
+       RESPONSIVE
+       ========================================================= */
+
+    @media (min-width: 560px) {
+      .hero-title {
+        font-size: clamp(2.4rem, 7vw, 4rem);
+      }
+
+      .officer-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .gallery-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .ecopedia-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .financial-summary {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+
+    @media (min-width: 800px) {
+      .section {
+        padding: 96px 0;
+      }
+
+      .nav-toggle {
+        display: none;
+      }
+
+      .nav-menu {
+        position: static;
+        display: flex;
+        align-items: center;
+        gap: 2px;
+        padding: 0;
+        border: 0;
+        border-radius: 0;
+        background: transparent;
+        box-shadow: none;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        backdrop-filter: none;
+      }
+
+      .nav-link {
+        padding: 9px 8px;
+        font-size: .68rem;
+      }
+
+      .hero-content {
+        grid-template-columns: 1fr 1.05fr;
+        align-items: center;
+        gap: 48px;
+      }
+
+      .hero {
+        min-height: 760px;
+      }
+
+      .about-grid {
+        grid-template-columns: 1.05fr .95fr;
+        align-items: center;
+        gap: 55px;
+      }
+
+      .featured-leaders {
+        grid-template-columns: repeat(2, 220px);
+      }
+
+      .officer-grid {
+        grid-template-columns: repeat(7, minmax(0, 1fr));
+      }
+
+      .gallery-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+
+      .ecopedia-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .sponsor-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+
+      .footer-inner {
+        grid-template-columns: 1fr auto;
+        align-items: end;
+      }
+    }
+
+    @media (min-width: 1080px) {
+      .nav-link {
+        padding-inline: 10px;
+        font-size: .7rem;
+      }
+
+      .hero-content {
+        gap: 70px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =========================================================
+       NAVIGATION
+       ========================================================= -->
+
+  <header class="site-header">
+    <nav class="container nav-shell" aria-label="Main navigation">
+
+      <a class="brand" href="#home" aria-label="Pacac High School YES-O Home">
+
+        <!-- REPLACE IMAGE SOURCE: images/logo.png -->
+        <img
+          class="brand-logo"
+          src="ylogo.png"
+          alt="Pacac High School YES-O official logo"
+        >
+
+        <span class="brand-text">
+          <span class="brand-title">Youth for Environment in Schools Organization</span>
+          <span class="brand-subtitle">Pacac High School</span>
+        </span>
+      </a>
+
+      <button
+        class="nav-toggle"
+        id="navToggle"
+        type="button"
+        aria-label="Open navigation menu"
+        aria-expanded="false"
+        aria-controls="navMenu"
+      >
+        <span></span>
+      </button>
+
+      <div class="nav-menu" id="navMenu">
+        <a class="nav-link active" href="#home">Home</a>
+        <a class="nav-link" href="#about">About</a>
+        <a class="nav-link" href="#leadership">Organization Leadership</a>
+        <a class="nav-link" href="#gallery">Gallery</a>
+        <a class="nav-link" href="#ecopedia">Ecopedia</a>
+        <a class="nav-link" href="#sponsors">Sponsors</a>
+        <a class="nav-link" href="#budget">Budget</a>
+      </div>
+    </nav>
+  </header>
+
+
+  <main>
+
+    <!-- =======================================================
+         HOME
+         ======================================================= -->
+
+    <section class="section hero" id="home">
+      <div class="container hero-content">
+
+        <div class="hero-copy reveal">
+          <span class="hero-kicker">S.Y. 2026-2027</span>
+
+          <h1 class="hero-title">Makakalikasang Araw!</h1>
+
+          <p class="hero-description">
+            Welcome to the official website of Pacac High School YES-O,
+            a student-led organization focused on environmental awareness,
+            responsible action, conservation, and meaningful participation.
+          </p>
+
+          <div class="hero-meta">
+            <span>Para sa Kabataan at Kalikasan</span>
+            <span>Puso, Galing, at Talino</span>
+          </div>
+        </div>
+
+        <div class="hero-image-wrap reveal">
+
+          <!-- REPLACE IMAGE SOURCE: images/school-gate.jpg -->
+          <div class="hero-image">
+            <img
+              src="PHS.jpg"
+              alt="Pacac High School campus"
+            >
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- =======================================================
+         ABOUT
+         ======================================================= -->
+
+    <section class="section about" id="about">
+      <div class="container">
+
+        <div class="section-heading reveal">
+          <span class="section-label">About YES-O</span>
+          <h2 class="section-title">What is YES-O?</h2>
+          <p class="section-description">
+            Learn about the organization, its environmental role, and
+            the programs supported by Pacac High School YES-O.
+          </p>
+        </div>
+
+        <div class="about-grid">
+
+          <div class="about-photo reveal">
+
+            <!-- REPLACE IMAGE SOURCE: images/yeso-group.jpg -->
+            <div class="about-photo-inner">
+              <img
+                src="Group.jpg"
+                alt="Pacac High School YES-O members"
+              >
+            </div>
+
+          </div>
+
+          <div class="about-copy reveal">
+
+            <h3>Youth for Environment in Schools Organization</h3>
+
+            <p>
+              According to its official Constitution and By-Laws mandated by the Philippine Department of Education, the Youth for Environment in Schools Organization (YES-O) is the only recognized co-curricular student organization authorized to lead environmental advocacy within public elementary and secondary schools. Formally established to consolidate all scattered campus ecology clubs into a unified force, its core objective is to foster active environmental awareness and hands-on conservation efforts among the youth through student-led initiatives. The By-Laws structure the organization around a democratically elected Executive Committee of student officers under the supervision of a school-designated Teacher-Adviser, requiring all members to actively implement practical, school-based programs such as waste segregation, tree planting, clean-up drives, and ecological campaigns to instill deep-rooted environmental values within the school and local community.
+            </p>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- =======================================================
+         ORGANIZATION LEADERSHIP
+         ======================================================= -->
+
+    <section class="section leadership" id="leadership">
+      <div class="container">
+
+        <div class="section-heading reveal">
+          <span class="section-label">Organization Leadership</span>
+          <h2 class="section-title">People Behind YES-O</h2>
+          <p class="section-description">
+            The leadership structure of Pacac High School YES-O
+            for School Year 2026-2027.
+          </p>
+        </div>
+
+
+        <div class="leadership-block reveal">
+          <div class="leadership-block-title">School Leadership</div>
+
+          <div class="featured-leaders">
+
+            <article class="leader-card">
+
+              <!-- REPLACE IMAGE SOURCE: images/principal.jpg -->
+              <div class="leader-photo">
+                <img
+                  src="SirEric.jpg"
+                  alt="Pacac High School Principal"
+                >
+              </div>
+
+              <h3 class="leader-name">Eric M. Villanueva</h3>
+              <p class="leader-position">School Principal III</p>
+
+            </article>
+
+
+            <article class="leader-card">
+
+              <!-- REPLACE IMAGE SOURCE: images/adviser.jpg -->
+              <div class="leader-photo">
+                <img
+                  src="MaamLina.jpg"
+                  alt="Pacac High School YES-O Adviser"
+                >
+              </div>
+
+              <h3 class="leader-name">Lina G. Nolasco</h3>
+              <p class="leader-position">YES-O Adviser</p>
+
+            </article>
+
+          </div>
+        </div>
+
+
+        <div class="leadership-block reveal">
+          <div class="leadership-block-title">YES-O Officers</div>
+
+          <div class="officer-grid">
+
+            <article class="officer-card">
+
+              <!-- REPLACE IMAGE SOURCE: images/officer-01.jpg -->
+              <div class="officer-photo">
+                <img
+                  src="MataJomar.png"
+                  alt="YES-O President"
+                >
+              </div>
+
+              <h3 class="officer-name">Jomar C. Mata</h3>
+              <p class="officer-position">President</p>
+
+            </article>
+
+
+            <article class="officer-card">
+
+              <!-- REPLACE IMAGE SOURCE: images/officer-02.jpg -->
+              <div class="officer-photo">
+                <img
+                  src="BiagMeldred.png"
+                  alt="YES-O Vice President"
+                >
+              </div>
+
+              <h3 class="officer-name">Meldred J. Biag</h3>
+              <p class="officer-position">Vice President</p>
+
+            </article>
+
+
+            <article class="officer-card">
+
+              <!-- REPLACE IMAGE SOURCE: images/officer-03.jpg -->
+              <div class="officer-photo">
+                <img
+                  src="ProlloMyan.png"
+                  alt="YES-O Secretary"
+                >
+              </div>
+
+              <h3 class="officer-name">Myan Pearl N. Prollo</h3>
+              <p class="officer-position">Secretary</p>
+
+            </article>
+
+
+            <article class="officer-card">
+
+              <!-- REPLACE IMAGE SOURCE: images/officer-04.jpg -->
+              <div class="officer-photo">
+                <img
+                  src="Ramiterre.png"
+                  alt="YES-O Treasurer"
+                >
+              </div>
+
+              <h3 class="officer-name">John Alexis C. Ramiterre</h3>
+              <p class="officer-position">Treasurer</p>
+
+            </article>
+
+
+            <article class="officer-card">
+
+              <!-- REPLACE IMAGE SOURCE: images/officer-05.jpg -->
+              <div class="officer-photo">
+                <img
+                  src="Agdipa.png"
+                  alt="YES-O Auditor"
+                >
+              </div>
+
+              <h3 class="officer-name">Alexa A. Agdipa</h3>
+              <p class="officer-position">Auditor</p>
+
+            </article>
+
+
+            <article class="officer-card">
+
+              <!-- REPLACE IMAGE SOURCE: images/officer-06.jpg -->
+              <div class="officer-photo">
+                <img
+                  src="Paringit.png"
+                  alt="YES-O Public Information Officer"
+                >
+              </div>
+
+              <h3 class="officer-name">Gabriel Yuan M. Paringit</h3>
+              <p class="officer-position">Public Information Officer</p>
+
+            </article>
+
+
+            <article class="officer-card">
+
+              <!-- REPLACE IMAGE SOURCE: images/officer-07.jpg -->
+              <div class="officer-photo">
+                <img
+                  src="Tigolo.png"
+                  alt="YES-O Officer"
+                >
+              </div>
+
+              <h3 class="officer-name">Sofhia Denise G. Tigolo</h3>
+              <p class="officer-position">Peace Officer</p>
+
+            </article>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- =======================================================
+         GALLERY
+         ======================================================= -->
+
+    <section class="section gallery" id="gallery">
+      <div class="container">
+
+        <div class="section-heading reveal">
+          <span class="section-label">Gallery</span>
+          <h2 class="section-title">YES-O in Action</h2>
+          <p class="section-description">
+            Official activities, programs, meetings, campaigns,
+            and environmental initiatives of Pacac High School YES-O.
+          </p>
+        </div>
+
+        <div class="gallery-grid">
+
+          <article
+            class="gallery-card reveal"
+            data-image="Meeting.jpg"
+            data-title= "July 10, 2026 | A meaningful start for a greener school year. The Pacac High School YES-O officers gathered for their first meeting to align plans, discuss upcoming programs, and strengthen our commitment to serving the youth and protecting our environment."
+            tabindex="0"
+            role="button"
+            aria-label="Open YES-O Meeting photo"
+          >
+            <!-- REPLACE IMAGE SOURCE: images/gallery-meeting.jpg -->
+            <div class="gallery-image">
+              <img src="Meeting.jpg" alt="YES-O Meeting">
+            </div>
+            <h3 class="gallery-title">First YES-O Meeting</h3>
+          </article>
+
+
+          <article
+            class="gallery-card reveal"
+            data-image="Proposal.jpg"
+            data-title="July 22, 2026 | The Pacac High School YES-O presented the ECOPEDIA Information Campaign proposal to Sir Eric, emphasizing meaningful learner engagement through accessible environmental knowledge, interactive quizzes, and activities designed to turn awareness into action."
+            tabindex="0"
+            role="button"
+            
+          >
+            <!-- REPLACE IMAGE SOURCE: images/gallery-tree-planting.jpg -->
+            <div class="gallery-image">
+              <img src="Proposal.jpg" alt="Tree planting activity">
+            </div>
+            <h3 class="gallery-title">Ecopedia Proposal</h3>
+          </article>
+		  
+		  <article
+            class="gallery-card reveal"
+            data-image="1stOrientation.jpg"
+            data-title="A strong start for our Senior High School members! The Pacac High School YES-O successfully conducted its SHS Member Orientation, introducing our mission, programs, expectations, and opportunities for active participation."
+            tabindex="0"
+            role="button"
+            
+          >
+            <!-- REPLACE IMAGE SOURCE: images/gallery-tree-planting.jpg -->
+            <div class="gallery-image">
+              <img src="1stOrientation.jpg" alt="Tree planting activity">
+            </div>
+            <h3 class="gallery-title">SHS Member Orientation</h3>
+          </article>
+		  
+		    <article
+            class="gallery-card reveal"
+            data-image="2ndOrinetation1.jpg"
+            data-title="The Pacac High School YES-O successfully conducted its Junior High School Member Orientation, welcoming new members and introducing our mission, programs, responsibilities, and opportunities for meaningful participation."
+            tabindex="0"
+            role="button"
+          >
+            <!-- REPLACE IMAGE SOURCE: images/gallery-tree-planting.jpg -->
+            <div class="gallery-image">
+              <img src="2ndOrinetation2.jpg" alt="Tree planting activity">
+            </div>
+            <h3 class="gallery-title">JHS Member Orientation</h3>
+          </article>
+		  
+		      <article
+            class="gallery-card reveal"
+            data-image="1stEcopediaRaffle.jpg"
+            data-title="A milestone for the Pacac High School YES-O ECOPEDIA Information Campaign! Our first raffle draw celebrated learners who took part in the ECOPEDIA quiz and showed their interest in learning more about Philippine wildlife."
+            tabindex="0"
+            role="button"
+          >
+            <!-- REPLACE IMAGE SOURCE: images/gallery-tree-planting.jpg -->
+            <div class="gallery-image">
+              <img src="1stEcopediaRaffle.jpg" alt="Tree planting activity">
+            </div>
+            <h3 class="gallery-title">First Ecopedia Raffle</h3>
+          </article>
+		  
+        </div>
+      </div>
+    </section>
+	
+	<section class="section winners" id="winners">
+      <div class="container">
+
+        <div class="section-heading reveal">
+          <span class="section-label">Ecopedia</span>
+          <h2 class="section-title">Monthly Winners</h2>
+          </p>
+        </div>
+
+        <div class="sponsor-grid">
+
+          <div class="sponsor-card reveal">Cristopher Joaquin</div>
+          <div class="sponsor-card reveal">Geraldine Javier</div>
+          <div class="sponsor-card reveal">Mark James Esteban</div>
+          <div class="sponsor-card reveal">Jillian Gabuyo</div>
+
+        </div>
+      </div>
+    </section>
+	
+
+
+
+    <!-- =======================================================
+         ECOPEDIA
+         ======================================================= -->
+
+    <section class="section ecopedia" id="ecopedia">
+      <div class="container">
+
+        <div class="section-heading reveal">
+          <span class="section-label">Campaign</span>
+          <h2 class="section-title">Ecopedia Information Campaign</h2>
+          <p class="section-description">
+            ECOPEDIA Information Campaign is the Pacac High School YES-O’s environmental education initiative for S.Y. 2026–2027, designed to increase learner engagement through weekly environmental information materials, posted every Monday on the YES-O Facebook Page and bulletin board, covering topics such as Philippine biodiversity, native wildlife, endangered species, climate change, waste management, water conservation, renewable energy, environmental laws, and the SDGs. The campaign also includes monthly quizzes released through Google Forms, where correct answers earn raffle entries, connecting environmental learning with active participation and recognition.
+
+          </p>
+        </div>
+
+        <div
+          class="month-selector"
+          id="monthSelector"
+          role="tablist"
+          aria-label="Ecopedia months"
+        ></div>
+
+        <div id="ecopediaContent" aria-live="polite"></div>
+
+      </div>
+    </section>
+
+
+    <!-- =======================================================
+         SPONSORS
+         ======================================================= -->
+
+    <section class="section sponsors" id="sponsors">
+      <div class="container">
+
+        <div class="section-heading reveal">
+          <span class="section-label">Supporters</span>
+          <h2 class="section-title">Sponsors</h2>
+          <p class="section-description">
+            We recognize the individuals, groups, and organizations
+            supporting the environmental programs and activities of
+            Pacac High School YES-O.
+          </p>
+        </div>
+
+        <div class="sponsor-grid">
+
+          <div class="sponsor-card reveal">Sangguniang Kabataan ng Narvacan 1</div>
+          <div class="sponsor-card reveal">Anonymous</div>
+          <div class="sponsor-card reveal">Anonymous</div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- =======================================================
+         BUDGET
+         ======================================================= -->
+
+    <section class="section budget" id="budget">
+      <div class="container">
+
+        <div class="section-heading reveal">
+          <span class="section-label">Transparency</span>
+          <h2 class="section-title">Ecopedia Budget</h2>
+          <p class="section-description">
+            Monthly financial records for Ecopedia activities,
+            including sponsor funds, prize expenses, and remaining
+            balances.
+          </p>
+        </div>
+
+
+        <div class="financial-summary">
+
+          <div class="finance-card reveal">
+            <div class="finance-label">Current Ecopedia Fund</div>
+            <div class="finance-value" id="totalFund">₱1300.00</div>
+          </div>
+
+          <div class="finance-card reveal">
+            <div class="finance-label">Total Prize Expenses</div>
+            <div class="finance-value" id="totalExpenses">₱493.00</div>
+          </div>
+
+          <div class="finance-card reveal">
+            <div class="finance-label">Remaining Funds</div>
+            <div class="finance-value" id="remainingFunds">₱807.00</div>
+          </div>
+
+        </div>
+
+
+        <div class="budget-table-wrap reveal">
+          <table class="budget-table">
+            <thead>
+              <tr>
+                <th>Month</th>
+                <th>Sponsor Funds</th>
+                <th>Prize Expenses</th>
+                <th>Remaining Balance</th>
+              </tr>
+            </thead>
+            <tbody id="budgetBody"></tbody>
+          </table>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- =========================================================
+       FOOTER
+       ========================================================= -->
+
+  <footer>
+    <div class="container footer-inner">
+
+      <div>
+        <div class="footer-brand">
+
+          <!-- REPLACE IMAGE SOURCE: images/logo.png -->
+          <img
+            class="footer-logo"
+            src="ylogo.png"
+            alt="Pacac High School YES-O official logo"
+          >
+
+          <div>
+            <div class="footer-title">
+              Youth for Environment in Schools Organization
+            </div>
+            <div class="footer-subtitle">
+              Pacac High School • School Year 2026-2027
+            </div>
+          </div>
+
+        </div>
+
+        <p class="footer-statement">
+          Para sa Kabataan. Para sa Kalikasan. Para sa Bayan. Lagi't Lagi
+        </p>
+      </div>
+
+      <div class="footer-bottom">
+        © 2026 Pacac High School YES-O. School Year 2026-2027.
+      </div>
+
+    </div>
+  </footer>
+
+
+  <!-- =========================================================
+       GALLERY LIGHTBOX
+       ========================================================= -->
+
+  <div
+    class="lightbox"
+    id="lightbox"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Gallery image viewer"
+  >
+    <div class="lightbox-content">
+
+      <button
+        class="lightbox-close"
+        id="lightboxClose"
+        type="button"
+        aria-label="Close image viewer"
+      >
+        ×
+      </button>
+
+      <div class="lightbox-image">
+        <img id="lightboxImg" src="" alt="">
+      </div>
+
+      <div class="lightbox-caption" id="lightboxCaption"></div>
+
+    </div>
+  </div>
+
+
+  <script>
+    /* =========================================================
+       PACAC HIGH SCHOOL YES-O
+       JAVASCRIPT
+       ========================================================= */
+
+
+    /* =========================================================
+       MOBILE NAVIGATION
+       ========================================================= */
+
+    const navToggle = document.getElementById("navToggle");
+    const navMenu = document.getElementById("navMenu");
+    const navLinks = document.querySelectorAll(".nav-link");
+
+    function closeMenu() {
+      navMenu.classList.remove("open");
+      navToggle.classList.remove("active");
+      navToggle.setAttribute("aria-expanded", "false");
+      navToggle.setAttribute("aria-label", "Open navigation menu");
+      document.body.classList.remove("menu-open");
+    }
+
+    navToggle.addEventListener("click", () => {
+      const isOpen = navMenu.classList.toggle("open");
+
+      navToggle.classList.toggle("active", isOpen);
+      navToggle.setAttribute("aria-expanded", String(isOpen));
+      navToggle.setAttribute(
+        "aria-label",
+        isOpen ? "Close navigation menu" : "Open navigation menu"
+      );
+
+      document.body.classList.toggle("menu-open", isOpen);
+    });
+
+    navLinks.forEach(link => {
+      link.addEventListener("click", closeMenu);
+    });
+
+
+    /* =========================================================
+       ACTIVE NAVIGATION
+       ========================================================= */
+
+    const sections = document.querySelectorAll("main section[id]");
+
+    const sectionObserver = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) return;
+
+          navLinks.forEach(link => {
+            link.classList.toggle(
+              "active",
+              link.getAttribute("href") === "#" + entry.target.id
+            );
+          });
+        });
+      },
+      {
+        rootMargin: "-30% 0px -60% 0px",
+        threshold: 0
+      }
+    );
+
+    sections.forEach(section => {
+      sectionObserver.observe(section);
+    });
+
+
+    /* =========================================================
+       SCROLL REVEAL
+       ========================================================= */
+
+    const revealObserver = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.08
+      }
+    );
+
+    document.querySelectorAll(".reveal").forEach(element => {
+      revealObserver.observe(element);
+    });
+
+
+    /* =========================================================
+       ECOPEDIA DATA
+       EDIT TOPICS HERE
+       ========================================================= */
+
+    const ecopediaData = {
+
+      "August 2026": {
+        theme: "Philippine Wildlife",
+        topics: [
+
+          {
+            title: "Tamaraw",
+            image: "EW1.png",
+            description:
+              "The tamaraw is a small wild buffalo found only in the Philippines. Protecting its habitat helps preserve one of the country's native mammals."
+          },
+
+          {
+            title: "Giant Golden-Crowned Flying Fox",
+            image: "EW2.png",
+            description:
+              "The giant golden-crowned flying fox is an important seed disperser. Forest protection supports both the species and the plants connected to its habitat."
+          },
+
+          {
+            title: "Philippine Tarsier",
+            image: "EW3.png",
+            description:
+              "The Philippine tarsier is a small primate native to the Philippines. Forest conservation helps protect the natural habitat it needs."
+          },
+
+          {
+            title: "Philippine Pangolin",
+            image: "EW4.png",
+            description:
+              "The Philippine pangolin is a threatened native mammal. Protecting forests and stopping wildlife exploitation are important conservation actions."
+          }
+
+        ]
+      },
+
+
+      "September 2026": {
+        theme: "Native Flora of the Philippines",
+        topics: [
+
+          {
+            title: "Kamagong",
+            image: "EW5.png",
+            description:
+              "Biodiversity refers to the variety of living organisms, their genes, and ecosystems. Healthy biodiversity supports balanced ecosystems."
+          }
+
+        ]
+      }
+
+    };
+
+
+    /* =========================================================
+       ECOPEDIA RENDERING
+       ========================================================= */
+
+    const monthSelector = document.getElementById("monthSelector");
+    const ecopediaContent = document.getElementById("ecopediaContent");
+
+    let activeMonth = Object.keys(ecopediaData)[0];
+
+    function renderMonthButtons() {
+
+      monthSelector.innerHTML = "";
+
+      Object.keys(ecopediaData).forEach(month => {
+
+        const button = document.createElement("button");
+
+        button.type = "button";
+        button.className = "month-btn";
+        button.textContent = month.replace(" 2026", "").replace(" 2027", "");
+
+        button.setAttribute("role", "tab");
+        button.setAttribute("aria-selected", String(month === activeMonth));
+
+        if (month === activeMonth) {
+          button.classList.add("active");
+        }
+
+        button.addEventListener("click", () => {
+          activeMonth = month;
+          renderMonthButtons();
+          renderEcopedia();
+        });
+
+        monthSelector.appendChild(button);
+
+      });
+    }
+
+
+    function renderEcopedia() {
+
+      const month = ecopediaData[activeMonth];
+
+      if (!month) return;
+
+      ecopediaContent.innerHTML = `
+        <div class="month-header">
+          <div>
+            <div class="month-name">${activeMonth}</div>
+          </div>
+          <div class="month-theme">${month.theme}</div>
+        </div>
+
+        <div class="ecopedia-grid">
+          ${month.topics.map((topic, index) => `
+            <article class="eco-card" style="animation-delay:${index * 45}ms">
+
+              <div class="eco-image">
+                <img
+                  src="${topic.image}"
+                  alt="${topic.title}"
+                  loading="lazy"
+                >
+              </div>
+
+              <div class="eco-content">
+                <h3>${topic.title}</h3>
+                <p>${topic.description}</p>
+              </div>
+
+            </article>
+          `).join("")}
+        </div>
+      `;
+    }
+
+    renderMonthButtons();
+    renderEcopedia();
+
+
+    /* =========================================================
+       BUDGET DATA
+       EDIT AMOUNTS HERE
+       ========================================================= */
+
+    const budgetData = [
+
+      {
+        month: "August 2026",
+        funds: 1300,
+        expenses: 493
+      },
+
+      {
+        month: "September 2026",
+        funds: 0,
+        expenses: 0
+      },
+
+      {
+        month: "October 2026",
+        funds: 0,
+        expenses: 0
+      },
+
+      {
+        month: "November 2026",
+        funds: 0,
+        expenses: 0
+      },
+
+      {
+        month: "December 2026",
+        funds: 0,
+        expenses: 0
+      },
+
+      {
+        month: "January 2027",
+        funds: 0,
+        expenses: 0
+      },
+
+      {
+        month: "February 2027",
+        funds: 0,
+        expenses: 0
+      },
+
+      {
+        month: "March 2027",
+        funds: 0,
+        expenses: 0
+      }
+
+    ];
+
+
+    /* =========================================================
+       BUDGET CALCULATIONS
+       ========================================================= */
+
+    const pesoFormatter = new Intl.NumberFormat("en-PH", {
+      style: "currency",
+      currency: "PHP",
+      minimumFractionDigits: 2
+    });
+
+    function calculateBudget() {
+
+      let totalFunds = 0;
+      let totalExpenses = 0;
+      let runningBalance = 0;
+
+      const budgetBody = document.getElementById("budgetBody");
+
+      budgetBody.innerHTML = "";
+
+      budgetData.forEach(row => {
+
+        totalFunds += Number(row.funds) || 0;
+        totalExpenses += Number(row.expenses) || 0;
+
+        runningBalance += (Number(row.funds) || 0);
+        runningBalance -= (Number(row.expenses) || 0);
+
+        const tr = document.createElement("tr");
+
+        tr.innerHTML = `
+          <td>${row.month}</td>
+          <td>${pesoFormatter.format(row.funds)}</td>
+          <td>${pesoFormatter.format(row.expenses)}</td>
+          <td>${pesoFormatter.format(runningBalance)}</td>
+        `;
+
+        budgetBody.appendChild(tr);
+
+      });
+
+      const remaining = totalFunds - totalExpenses;
+
+      document.getElementById("totalFund").textContent =
+        pesoFormatter.format(totalFunds);
+
+      document.getElementById("totalExpenses").textContent =
+        pesoFormatter.format(totalExpenses);
+
+      document.getElementById("remainingFunds").textContent =
+        pesoFormatter.format(remaining);
+    }
+
+    calculateBudget();
+
+
+    /* =========================================================
+       GALLERY LIGHTBOX
+       ========================================================= */
+
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightboxImg");
+    const lightboxCaption = document.getElementById("lightboxCaption");
+    const lightboxClose = document.getElementById("lightboxClose");
+
+    let lastFocusedGalleryItem = null;
+
+    function openLightbox(card) {
+
+      const image = card.dataset.image;
+      const title = card.dataset.title;
+
+      if (!image) return;
+
+      lastFocusedGalleryItem = card;
+
+      lightboxImg.src = image;
+      lightboxImg.alt = title;
+      lightboxCaption.textContent = title;
+
+      lightbox.classList.add("open");
+      document.body.classList.add("menu-open");
+
+      lightboxClose.focus();
+    }
+
+
+    function closeLightbox() {
+
+      lightbox.classList.remove("open");
+      document.body.classList.remove("menu-open");
+
+      lightboxImg.src = "";
+      lightboxImg.alt = "";
+
+      if (lastFocusedGalleryItem) {
+        lastFocusedGalleryItem.focus();
+      }
+    }
+
+
+    document.querySelectorAll(".gallery-card").forEach(card => {
+
+      card.addEventListener("click", () => {
+        openLightbox(card);
+      });
+
+      card.addEventListener("keydown", event => {
+
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          openLightbox(card);
+        }
+
+      });
+
+    });
+
+
+    lightboxClose.addEventListener("click", closeLightbox);
+
+
+    lightbox.addEventListener("click", event => {
+
+      if (event.target === lightbox) {
+        closeLightbox();
+      }
+
+    });
+
+
+    document.addEventListener("keydown", event => {
+
+      if (event.key === "Escape") {
+
+        if (lightbox.classList.contains("open")) {
+          closeLightbox();
+        } else if (navMenu.classList.contains("open")) {
+          closeMenu();
+        }
+
+      }
+
+    });
+
+
+    /* =========================================================
+       CLOSE MOBILE MENU WHEN RESIZING TO DESKTOP
+       ========================================================= */
+
+    window.addEventListener("resize", () => {
+
+      if (window.innerWidth >= 800) {
+        closeMenu();
+      }
+
+    });
+
+  </script>
+
+</body>
+</html>
